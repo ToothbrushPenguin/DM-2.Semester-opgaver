@@ -1,0 +1,23 @@
+@startuml CreateFilm
+skinparam style strictuml
+skinparam sequenceMessageAlign center
+title CreateFilm SD
+
+participant ":MainWindow" as MV
+participant ":AddFilmCommand" as AFC
+participant ":MainViewModel" as MVM
+participant ":FilmRepository" as FP
+participant ":FilmViewModel" as FVM
+
+MV -> AFC ++: Execute(paramiter)
+    AFC -> MVM ++: CreateFilm()
+        MVM -> FP ++: Create(titel, runtime, director, price, agerestrictions, genre)
+        return film
+
+        MVM -> FVM **: Create New FilmViewModel(film) fMV
+        MVM -> MVM: filmVMs.Add(fVM)
+        MVM -> MVM: SelectedFilmVM = fVM
+    return
+return Update listbox with new film
+@enduml
+

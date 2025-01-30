@@ -1,0 +1,24 @@
+@startuml DeleteFilm
+skinparam style strictuml
+skinparam sequenceMessageAlign center
+title DeleteFilm SD
+
+participant ":MainWindow" as MV
+participant ":RemoveFilmCommand" as AFC
+participant ":MainViewModel" as MVM
+participant "SelectedFilmVM:FilmViewModel" as FVM
+participant ":FilmRepository" as FP
+
+MV -> AFC ++: Execute(paramiter)
+    AFC -> MVM ++: DeleteFilm()
+        MVM -> FVM ++: Delete(filmRepo)
+            FVM -> FP ++: Delete(film.id)
+            return
+        return
+
+    MVM -> MVM: filmVMS.Remove(SelectedFilmVM)
+    MVM -> MVM: SelectectFilmVM = filmMVs[0]
+    return
+return
+     
+@enduml

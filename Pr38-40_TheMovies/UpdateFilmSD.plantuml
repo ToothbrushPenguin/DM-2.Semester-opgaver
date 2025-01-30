@@ -1,0 +1,13 @@
+@startuml UpdateFilm
+skinparam style strictuml
+skinparam sequenceMessageAlign center
+title CreateFilm SD
+
+participant ":MainViewModel" as MVM
+participant ":searchfilm" as SF
+
+
+MVM -> SF ++: searchfilm(paramiter) 
+
+
+@enduml
