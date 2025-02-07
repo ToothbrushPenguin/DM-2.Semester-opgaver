@@ -8,13 +8,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-<<<<<<< Updated upstream
-=======
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
   </ItemGroup>
 
->>>>>>> Stashed changes
 </Project>
