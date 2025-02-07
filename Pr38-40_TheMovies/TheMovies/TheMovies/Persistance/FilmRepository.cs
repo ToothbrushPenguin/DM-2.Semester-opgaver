@@ -11,7 +11,7 @@ namespace TheMovies.Persistance
     {
         private List<Film> films = new List<Film>();
 
-        public Film Create(string title, TimeSpan runtime, string director, double price, int agerestriction, string genre)
+        public void Create(string title, TimeSpan runtime, string director, double price, int agerestriction, string genre)
         {
             films.Add(new Film(title, runtime, director, price, agerestriction, genre));
         }
